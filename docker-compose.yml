@@ -1,0 +1,9 @@
+services:
+  transcribe:
+    build: .
+    env_file: .env
+    volumes:
+      - .:/app
+    # One-shot: fetches transcript and writes {NAME}.txt, then exits
+    stdin_open: false
+    tty: false
