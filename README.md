@@ -25,4 +25,7 @@ docker compose run --rm transcribe
 
 ## Cursor agents
 
-Usage for agents lives in the **cursor-rules** repo: `.cursor/rules/transcribe-trigger.mdc` and `.cursor/skills/transcribe-youtube/SKILL.md`.
+Usage for agents lives in the public **cursor-rules** repo:
+
+- Trigger rule: [`transcribe-trigger.mdc`](https://github.com/BimRoss/cursor-rules/blob/master/.cursor/rules/transcribe-trigger.mdc)
+- Skill: [`transcribe-youtube/SKILL.md`](https://github.com/BimRoss/cursor-rules/blob/master/.cursor/skills/transcribe-youtube/SKILL.md)
