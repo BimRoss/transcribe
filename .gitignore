@@ -1,5 +1,9 @@
 .DS_Store
 .env
+# Ignore loose .txt except requirements and transcriptions/
 *.txt
+!requirements.txt
+!transcriptions/
+!transcriptions/*.txt
 __pycache__/
 .venv/
