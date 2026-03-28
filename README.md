@@ -1,21 +1,19 @@
 # Transcribe
 
+[![GitHub stars](https://img.shields.io/github/stars/BimRoss/transcribe?style=social)](https://github.com/BimRoss/transcribe/stargazers)
+
 Turn any YouTube video into usable text in under a minute.
 
-`transcribe` is a Docker-first YouTube **caption extractor** powered by `youtube-transcript-api`. It writes clean output to `transcriptions/{NAME}.txt`.
+`transcribe` is a Docker-first YouTube caption extractor powered by `youtube-transcript-api`. It writes clean text to `transcriptions/{NAME}.txt`.
 
-Important: this is **not** Whisper and does **not** transcribe raw audio. It fetches available YouTube transcript/caption text.
+Important: this is not Whisper. It extracts available YouTube transcript/caption text.
 
-## Why Use This
+## Why This Exists
 
-- Fast research and content repurposing
-- Clean text files ready for AI workflows, summaries, and notes
-- No local Python setup required
-- Repeatable team workflow via Docker Compose
+Speed wins.  
+If you still copy/paste transcripts manually, you are spending time on low-leverage work.
 
-## Quick Start (Recommended)
-
-Run from this repo directory and pass values directly into the container:
+## Quick Start
 
 ```bash
 docker compose run --rm \
@@ -24,36 +22,34 @@ docker compose run --rm \
   transcribe
 ```
 
-Why `-e`? Because `docker-compose.yml` uses `env_file: .env`, and shell-prefixed vars can be overridden unless passed explicitly.
-
-## Alternative: `.env` Driven
+Alternative `.env` flow:
 
 ```bash
 cp .env.example .env
-# Set YOUTUBE_VIDEO_URL and NAME
 docker compose run --rm transcribe
 ```
 
 ## Output
 
-- Location: `transcriptions/`
-- Filename: `{NAME}.txt`
-- Format: plain text transcript for downstream AI or human editing
+- Directory: `transcriptions/`
+- File: `{NAME}.txt`
+- Format: plain text transcript for AI research and human editing
 
 ## Best Use Cases
 
-- Founder/content workflows (clips, posts, threads, newsletters)
-- Competitive research from talks, interviews, and podcasts
+- Founder and creator content workflows
+- Competitive research from podcasts and interviews
 - Internal knowledge capture from long-form videos
 - Prompt-ready source files for LLM analysis
 
-## Cursor Agent Integration
+## Related Projects
 
-If you use Cursor agents, this flow is already codified:
+- [cursor-rules](https://github.com/BimRoss/cursor-rules)
 
-- Trigger rule: [`transcribe-trigger.mdc`](https://github.com/BimRoss/cursor-rules/blob/master/.cursor/rules/transcribe-trigger.mdc)
-- Skill: [`transcribe-youtube/SKILL.md`](https://github.com/BimRoss/cursor-rules/blob/master/.cursor/skills/transcribe-youtube/SKILL.md)
+## Keywords
 
-## If This Saves You Time
+YouTube transcript extractor, Docker transcript tool, caption to text, AI research workflow, content repurposing pipeline.
 
-Star the repo and share it with one builder who still copy-pastes transcripts manually.
+## Support
+
+If this saves you time every week, star the repo and share it with one builder.
